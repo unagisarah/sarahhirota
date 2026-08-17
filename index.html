@@ -168,14 +168,10 @@ section{padding:var(--space-9) 0}
 .sobre-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--space-8);align-items:center}
 .sobre-grid img{border-radius:var(--radius-lg);box-shadow:var(--shadow-card)}
 
-/* As ondas pontilhadas deixaram de ser uma FAIXA propria (que era so mais um
-   retangulo, justamente o que ela criticou) e viraram textura no rodape da
-   secao. Mesmo grafismo, sem virar bloco. */
-#fazer{
-  background-image:url("img/ondas-faixa.png");
-  background-repeat:no-repeat;background-position:center bottom;
-  background-size:100% auto;padding-bottom:calc(var(--space-9) + 40px);
-}
+/* Aqui havia uma textura de ondas pontilhadas no rodape. Saiu: logo abaixo dela
+   comeca a onda da transicao de secao, e os dois desenhos de onda, um pontilhado
+   e um solido, brigavam. Ela chamou de confuso em 17/08 e estava certa. Um
+   grafismo de onda por transicao, nunca dois. */
 
 /* ---------- transicao em onda entre secoes ----------
    Referencia: o proprio site da Umie (umieconecta.com.br), que ela mandou em
@@ -183,32 +179,33 @@ section{padding:var(--space-9) 0}
    encostam em linha reta: uma escorre pra dentro da outra numa curva.
    A cor da onda e a da secao ANTERIOR, por isso uma classe por cor.
 */
-.onda-topo{position:relative;padding-top:calc(var(--space-9) + 34px)}
+.onda-topo{position:relative;padding-top:calc(var(--space-9) + 24px)}
 .onda-topo::before{
-  content:"";position:absolute;left:0;right:0;top:-1px;height:78px;
+  content:"";position:absolute;left:0;right:0;top:-1px;height:56px;
   pointer-events:none;background-repeat:no-repeat;background-size:100% 100%;
 }
 .de-creme::before{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 78' preserveAspectRatio='none'%3E%3Cpath fill='%23f6f4ef' d='M0,0 H1440 V34 C1268,72 1096,50 912,42 C676,31 494,64 258,53 C170,49 84,42 0,28 Z'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 56' preserveAspectRatio='none'%3E%3Cpath fill='%23f6f4ef' d='M0,0 H1440 V30 C1200,50 960,34 720,38 C480,42 240,52 0,34 Z'/%3E%3C/svg%3E");
 }
 .de-branco::before{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 78' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,0 H1440 V30 C1240,66 1060,44 880,48 C640,54 460,26 240,40 C158,45 78,52 0,44 Z'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 56' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,0 H1440 V28 C1210,46 980,32 740,36 C500,40 250,48 0,32 Z'/%3E%3C/svg%3E");
 }
 .de-teal::before{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 78' preserveAspectRatio='none'%3E%3Cpath fill='%23006b71' d='M0,0 H1440 V36 C1250,70 1070,40 890,44 C650,50 470,72 236,56 C154,50 76,44 0,32 Z'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 56' preserveAspectRatio='none'%3E%3Cpath fill='%23006b71' d='M0,0 H1440 V32 C1200,52 960,36 720,40 C480,44 240,50 0,34 Z'/%3E%3C/svg%3E");
 }
 /* A onda do bloco teal leva uma segunda camada em sage, mais alta e por baixo,
    pra dar a profundidade do site da Umie em vez de um recorte chapado. Vai como
    segunda imagem do MESMO ::before porque o ::after do .destaque ja esta em uso
    pela textura de ondas do rodape do bloco. */
 .de-branco.onda-dupla::before{
-  height:112px;
+  height:84px;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 78' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,0 H1440 V30 C1240,66 1060,44 880,48 C640,54 460,26 240,40 C158,45 78,52 0,44 Z'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 112' preserveAspectRatio='none'%3E%3Cpath fill='%23a9bcb4' fill-opacity='0.5' d='M0,0 H1440 V56 C1250,98 1070,62 890,66 C650,76 470,104 236,84 C154,76 76,66 0,52 Z'/%3E%3C/svg%3E");
-  background-size:100% 78px, 100% 112px;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 56' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,0 H1440 V28 C1210,46 980,32 740,36 C500,40 250,48 0,32 Z'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 84' preserveAspectRatio='none'%3E%3Cpath fill='%23a9bcb4' fill-opacity='0.22' d='M0,0 H1440 V44 C1210,66 980,50 740,54 C500,58 250,70 0,50 Z'/%3E%3C/svg%3E");
+  background-size:100% 56px, 100% 84px;
   background-position:top left, top left;
 }
+
 
 /* ---------- grafismos da Umie ----------
    Geradas por processos/grafismos_umie.py, as mesmas dos carrosseis dela.
