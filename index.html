@@ -103,7 +103,13 @@ header.topo{padding:var(--space-6) 0 0}
   font-size:1.1rem;border-left:3px solid var(--color-brand-secondary);
   padding-left:var(--space-4);margin:0 0 var(--space-6);
 }
-.hero-foto img{border-radius:var(--radius-lg);width:100%;box-shadow:var(--shadow-card)}
+/* max-height em vh resolve o modo paisagem: sem isso a foto vertical fica mais
+   alta que a tela deitada, o grid centraliza tudo em relacao a ela e o texto
+   sai de vista. Ela reportou em 17/08 com print. Vale em qualquer largura. */
+.hero-foto img{
+  border-radius:var(--radius-lg);width:100%;box-shadow:var(--shadow-card);
+  max-height:76vh;object-fit:cover;object-position:center 18%;
+}
 .botoes{display:flex;flex-wrap:wrap;gap:var(--space-3)}
 .btn{
   display:inline-block;padding:14px 28px;border-radius:var(--radius-pill);
@@ -141,7 +147,11 @@ section{padding:var(--space-9) 0}
 .etapa p{margin:6px 0 0;color:var(--text-body)}
 
 /* ---------- cards ---------- */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--space-5);margin-top:var(--space-7)}
+/* Colunas explicitas em vez de auto-fit: com auto-fit dava 3 colunas e o quarto
+   card ficava sozinho numa segunda linha. 4 ou 2, nunca 3. */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5);margin-top:var(--space-7)}
+@media (max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.cards{grid-template-columns:1fr}}
 .card{
   background:var(--surface-card);border-radius:var(--radius-lg);padding:var(--space-6) var(--space-5);
   border:1px solid var(--surface-border);box-shadow:var(--shadow-sm);
@@ -201,6 +211,24 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
   .faixa img{height:220px}
   .btn{width:100%;text-align:center}
   .botoes{gap:var(--space-3)}
+}
+
+/* ---------- celular deitado ----------
+   Tela larga e MUITO baixa. Aqui a largura engana: o layout de duas colunas
+   cabe, mas a altura nao. Encolhe o vertical em vez de reempilhar, senao
+   rolar fica infinito.
+*/
+@media (orientation:landscape) and (max-height:600px){
+  .hero{padding:var(--space-5) 0 var(--space-6)}
+  .hero-grid{gap:var(--space-6);align-items:center}
+  .hero-foto img{max-height:64vh}
+  h1{font-size:clamp(1.9rem,5vw,2.6rem)}
+  .hero .lede{font-size:1rem;margin:var(--space-4) 0}
+  .assinatura{margin-bottom:var(--space-5);font-size:1rem}
+  section{padding:var(--space-7) 0}
+  .sobre-grid img{max-height:70vh;object-fit:cover}
+  .faixa img{height:180px}
+  .btn{width:auto}
 }
 </style>
 </head>
