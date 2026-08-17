@@ -152,9 +152,11 @@ section{padding:var(--space-9) 0}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5);margin-top:var(--space-7)}
 @media (max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.cards{grid-template-columns:1fr}}
+/* Sem borda, por decisao do design system ("Card Anatomy": solid fill, raio 28,
+   sombra colorida suave, no borders). Eu tinha posto borda de 1px. */
 .card{
-  background:var(--surface-card);border-radius:var(--radius-lg);padding:var(--space-6) var(--space-5);
-  border:1px solid var(--surface-border);box-shadow:var(--shadow-sm);
+  background:var(--surface-card);border-radius:var(--radius-lg);
+  padding:var(--space-6) var(--space-5);box-shadow:var(--shadow-card);
 }
 .card p{margin:var(--space-3) 0 0;color:var(--text-body);font-size:.97rem}
 .card .num{
@@ -166,11 +168,35 @@ section{padding:var(--space-9) 0}
 .sobre-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--space-8);align-items:center}
 .sobre-grid img{border-radius:var(--radius-lg);box-shadow:var(--shadow-card)}
 
-/* ---------- faixa ---------- */
-.faixa img{width:100%;height:340px;object-fit:cover;object-position:center 30%}
+/* ---------- faixa de ondas ----------
+   Era uma foto. Todas as 24 fotos do ensaio claro sao verticais, e recorte
+   vertical em tira fina corta a cabeca dela: foi o que ela viu no celular em
+   17/08. Grafismo da marca resolve melhor e ainda pesa menos.
+*/
+.faixa-ondas{
+  height:210px;background:url("img/ondas-faixa.png") center/cover no-repeat;
+}
+
+/* ---------- grafismos da Umie ----------
+   Geradas por processos/grafismos_umie.py, as mesmas dos carrosseis dela.
+   Ficam atras do conteudo e nao capturam clique.
+*/
+.hero{position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;top:-140px;right:-180px;
+  width:1100px;height:1100px;pointer-events:none;
+  background:url("img/veu-pontos.png") no-repeat center/contain;
+}
+.hero .wrap{position:relative;z-index:1}
 
 /* ---------- destaque ---------- */
-.destaque{background:var(--color-brand-primary);color:var(--text-on-dark)}
+.destaque{background:var(--color-brand-primary);color:var(--text-on-dark);position:relative;overflow:hidden}
+.destaque::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:250px;
+  pointer-events:none;
+  background:url("img/ondas-claras.png") center bottom/cover no-repeat;
+}
+.destaque .wrap{position:relative;z-index:1}
 .destaque .eyebrow{color:var(--sage-300)}
 .destaque h2{color:var(--text-on-dark)}
 .destaque p{color:rgba(246,244,239,.92);max-width:56ch}
@@ -208,7 +234,7 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
   .sobre-grid img{max-height:46vh;object-fit:cover;object-position:center 25%}
   .hero{padding:var(--space-6) 0 var(--space-8)}
   section{padding:var(--space-8) 0}
-  .faixa img{height:220px}
+  .faixa-ondas{height:150px}
   .btn{width:100%;text-align:center}
   .botoes{gap:var(--space-3)}
 }
@@ -227,7 +253,7 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
   .assinatura{margin-bottom:var(--space-5);font-size:1rem}
   section{padding:var(--space-7) 0}
   .sobre-grid img{max-height:70vh;object-fit:cover}
-  .faixa img{height:180px}
+  .faixa-ondas{height:120px}
   .btn{width:auto}
 }
 </style>
@@ -355,9 +381,7 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
   </div>
 </section>
 
-<div class="faixa">
-  <img src="img/sarah-faixa.jpg" alt="" width="1600" height="1067">
-</div>
+<div class="faixa-ondas" role="presentation"></div>
 
 <section id="fazer">
   <div class="wrap">
