@@ -168,13 +168,46 @@ section{padding:var(--space-9) 0}
 .sobre-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--space-8);align-items:center}
 .sobre-grid img{border-radius:var(--radius-lg);box-shadow:var(--shadow-card)}
 
-/* ---------- faixa de ondas ----------
-   Era uma foto. Todas as 24 fotos do ensaio claro sao verticais, e recorte
-   vertical em tira fina corta a cabeca dela: foi o que ela viu no celular em
-   17/08. Grafismo da marca resolve melhor e ainda pesa menos.
+/* As ondas pontilhadas deixaram de ser uma FAIXA propria (que era so mais um
+   retangulo, justamente o que ela criticou) e viraram textura no rodape da
+   secao. Mesmo grafismo, sem virar bloco. */
+#fazer{
+  background-image:url("img/ondas-faixa.png");
+  background-repeat:no-repeat;background-position:center bottom;
+  background-size:100% auto;padding-bottom:calc(var(--space-9) + 40px);
+}
+
+/* ---------- transicao em onda entre secoes ----------
+   Referencia: o proprio site da Umie (umieconecta.com.br), que ela mandou em
+   17/08 dizendo que aqui estava "muito bloco quadrado". La as secoes nao se
+   encostam em linha reta: uma escorre pra dentro da outra numa curva.
+   A cor da onda e a da secao ANTERIOR, por isso uma classe por cor.
 */
-.faixa-ondas{
-  height:210px;background:url("img/ondas-faixa.png") center/cover no-repeat;
+.onda-topo{position:relative;padding-top:calc(var(--space-9) + 34px)}
+.onda-topo::before{
+  content:"";position:absolute;left:0;right:0;top:-1px;height:78px;
+  pointer-events:none;background-repeat:no-repeat;background-size:100% 100%;
+}
+.de-creme::before{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 78' preserveAspectRatio='none'%3E%3Cpath fill='%23f6f4ef' d='M0,0 H1440 V34 C1268,72 1096,50 912,42 C676,31 494,64 258,53 C170,49 84,42 0,28 Z'/%3E%3C/svg%3E");
+}
+.de-branco::before{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 78' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,0 H1440 V30 C1240,66 1060,44 880,48 C640,54 460,26 240,40 C158,45 78,52 0,44 Z'/%3E%3C/svg%3E");
+}
+.de-teal::before{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 78' preserveAspectRatio='none'%3E%3Cpath fill='%23006b71' d='M0,0 H1440 V36 C1250,70 1070,40 890,44 C650,50 470,72 236,56 C154,50 76,44 0,32 Z'/%3E%3C/svg%3E");
+}
+/* A onda do bloco teal leva uma segunda camada em sage, mais alta e por baixo,
+   pra dar a profundidade do site da Umie em vez de um recorte chapado. Vai como
+   segunda imagem do MESMO ::before porque o ::after do .destaque ja esta em uso
+   pela textura de ondas do rodape do bloco. */
+.de-branco.onda-dupla::before{
+  height:112px;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 78' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,0 H1440 V30 C1240,66 1060,44 880,48 C640,54 460,26 240,40 C158,45 78,52 0,44 Z'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 112' preserveAspectRatio='none'%3E%3Cpath fill='%23a9bcb4' fill-opacity='0.5' d='M0,0 H1440 V56 C1250,98 1070,62 890,66 C650,76 470,104 236,84 C154,76 76,66 0,52 Z'/%3E%3C/svg%3E");
+  background-size:100% 78px, 100% 112px;
+  background-position:top left, top left;
 }
 
 /* ---------- grafismos da Umie ----------
@@ -187,6 +220,14 @@ section{padding:var(--space-9) 0}
   width:1100px;height:1100px;pointer-events:none;
   background:url("img/veu-pontos.png") no-repeat center/contain;
 }
+/* No celular o veu cobria a coluna de texto inteira e virava ruido atras da
+   leitura. Ela mandou print em 17/08. Aqui ele desce pro rodape do bloco, do
+   lado da foto, e sai de tras do texto. */
+@media (max-width:820px){
+  .hero::before{
+    top:auto;bottom:-130px;right:-150px;width:460px;height:460px;opacity:.75;
+  }
+}
 .hero .wrap{position:relative;z-index:1}
 
 /* ---------- destaque ---------- */
@@ -196,7 +237,7 @@ section{padding:var(--space-9) 0}
   pointer-events:none;
   background:url("img/ondas-claras.png") center bottom/cover no-repeat;
 }
-.destaque .wrap{position:relative;z-index:1}
+.destaque .wrap{position:relative;z-index:3}
 .destaque .eyebrow{color:var(--sage-300)}
 .destaque h2{color:var(--text-on-dark)}
 .destaque p{color:rgba(246,244,239,.92);max-width:56ch}
@@ -234,7 +275,7 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
   .sobre-grid img{max-height:46vh;object-fit:cover;object-position:center 25%}
   .hero{padding:var(--space-6) 0 var(--space-8)}
   section{padding:var(--space-8) 0}
-  .faixa-ondas{height:150px}
+
   .btn{width:100%;text-align:center}
   .botoes{gap:var(--space-3)}
 }
@@ -253,7 +294,7 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
   .assinatura{margin-bottom:var(--space-5);font-size:1rem}
   section{padding:var(--space-7) 0}
   .sobre-grid img{max-height:70vh;object-fit:cover}
-  .faixa-ondas{height:120px}
+
   .btn{width:auto}
 }
 </style>
@@ -281,7 +322,7 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
   </div>
 </div>
 
-<section id="trajetoria" class="claro">
+<section id="trajetoria" class="claro onda-topo de-creme">
   <div class="wrap">
     <p class="eyebrow">Trajetória</p>
     <h2>Como eu cheguei até aqui</h2>
@@ -381,9 +422,7 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
   </div>
 </section>
 
-<div class="faixa-ondas" role="presentation"></div>
-
-<section id="fazer">
+<section id="fazer" class="onda-topo de-branco">
   <div class="wrap">
     <p class="eyebrow">O que eu faço</p>
     <h2>Quatro frentes, uma pergunta só</h2>
@@ -413,7 +452,7 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
   </div>
 </section>
 
-<section id="sobre" class="claro">
+<section id="sobre" class="claro onda-topo de-creme">
   <div class="wrap sobre-grid">
     <img src="img/sarah-sobre.jpg" alt="Sarah Hirota" width="800" height="1200">
     <div>
@@ -438,7 +477,7 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
   </div>
 </section>
 
-<section class="destaque">
+<section class="destaque onda-topo de-branco onda-dupla">
   <div class="wrap">
     <p class="eyebrow">Próximo encontro</p>
     <span class="selo">30 de agosto de 2026</span>
@@ -454,7 +493,7 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
   </div>
 </section>
 
-<section id="contato">
+<section id="contato" class="onda-topo de-teal">
   <div class="wrap">
     <p class="eyebrow">Contato</p>
     <h2>Vamos conversar</h2>
