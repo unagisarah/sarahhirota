@@ -10,11 +10,12 @@
 <meta property="og:type" content="website">
 <!-- og:image PRECISA ser endereço absoluto: o WhatsApp busca a imagem do servidor
      dele, não do navegador de quem recebe, então caminho relativo não resolve e o
-     link chega sem prévia. É esta arte que aparece quando ela manda o link nos
-     grupos, e é por isso que ela existe aqui. -->
-<meta property="og:image" content="https://sarahhirota.com/corrida/arte-embaixadora.jpg">
-<meta property="og:image:width" content="720">
-<meta property="og:image:height" content="1280">
+     link chega sem prévia. É esta imagem que aparece quando ela manda o link nos
+     grupos. Era a arte de embaixadora até 17/08; ela preferiu a foto dela, e a
+     prévia acompanha a página pra não prometer uma coisa e mostrar outra. -->
+<meta property="og:image" content="https://sarahhirota.com/corrida/sarah-corrida.jpg">
+<meta property="og:image:width" content="842">
+<meta property="og:image:height" content="1264">
 <meta property="og:url" content="https://sarahhirota.com/corrida/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,6 +165,9 @@ footer{
   font-size:.88rem;color:var(--text-muted);
 }
 footer a{color:var(--color-brand-primary)}
+/* Menor e mais apagado que o resto do rodapé: é aviso legal, precisa estar
+   legível e não precisa competir com nada. */
+.miudo{font-size:.78rem;line-height:1.5;max-width:52ch;margin:var(--space-4) auto 0;opacity:.8}
 </style>
 </head>
 <body>
@@ -173,11 +177,11 @@ footer a{color:var(--color-brand-primary)}
 <header class="hero wrap">
   <p class="eyebrow">Sou embaixadora desta corrida</p>
   <h1>Run Like a&nbsp;Mother</h1>
-  <!-- Arte oficial da B2Mamy com o selo de embaixadora dela. Limitada em altura
-       porque é 9:16: sem teto, no computador ela ocuparia a tela inteira e
-       empurraria a informação do evento pra baixo da dobra. -->
-  <img class="arte" src="arte-embaixadora.jpg" width="720" height="1280"
-       alt="Sarah Hirota, embaixadora da Run Like a Mother. 25/09, 6h30 às 10h, Parque Villa Lobos, São Paulo.">
+  <!-- A foto dela, sem a arte de selo de embaixadora: pedido dela em 17/08. A
+       arte continua no repositório e é o que ela usa no Instagram; aqui a página
+       fala com a voz dela, não com a peça institucional do evento. -->
+  <img class="arte" src="sarah-corrida.jpg" width="842" height="1264"
+       alt="Sarah Hirota correndo no parque, sorrindo, de camiseta laranja.">
   <p class="lede">
     2ª edição São Paulo. Quatro quilômetros que você corre ou caminha, do seu
     jeito, junto com um monte de mulher que também empreende. Depois tem café,
@@ -254,6 +258,12 @@ footer a{color:var(--color-brand-primary)}
   <p>
     Sarah Hirota &middot; embaixadora da B2Mamy Run Like a Mother<br>
     <a href="../">sarahhirota.com</a>
+  </p>
+  <p class="miudo">
+    A Run Like a Mother é organizada e realizada pela B2Mamy. Inscrições,
+    regulamento e informações oficiais são responsabilidade deles, na
+    <a href="https://www.b2mamyeventos.com.br/event-details/b2mamy-run-like-a-mother-2-edicao-sao-paulo" target="_blank" rel="noopener">página oficial do evento</a>.
+    Esta página aqui é só o convite de uma embaixadora.
   </p>
 </footer>
 
