@@ -15,59 +15,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- Dados estruturados: é o que buscador e assistente leem pra saber QUEM ela é
-     e O QUE ela faz sem ter que adivinhar do texto corrido. Aqui só entra fato
-     verificável: nome, papel, endereços dela e as quatro frentes que já estão
-     escritas na página. Nada de afiliação que eu não possa comprovar. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://sarahhirota.com/#sarah",
-      "name": "Sarah Hirota",
-      "url": "https://sarahhirota.com",
-      "image": "https://sarahhirota.com/img/sarah-hero.jpg",
-      "jobTitle": "Consultora e mentora de negócios",
-      "description": "Ajuda mulheres empreendedoras a transformar a operação em resultado, com dados, processos e tecnologia.",
-      "worksFor": { "@id": "https://sarahhirota.com/#umie" },
-      "knowsAbout": [
-        "estruturação de operação",
-        "processos de negócio",
-        "gestão orientada a dados",
-        "mentoria de fundadores",
-        "empreendedorismo feminino",
-        "criação e tração de novos negócios"
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/in/sarahhirota",
-        "https://www.instagram.com/sjanehirota"
-      ]
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://sarahhirota.com/#umie",
-      "name": "Umie Conecta",
-      "founder": { "@id": "https://sarahhirota.com/#sarah" },
-      "url": "https://sarahhirota.com",
-      "areaServed": "Brasil",
-      "address": { "@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR" },
-      "sameAs": ["https://www.instagram.com/umie.conecta"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Frentes de trabalho",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria", "description": "Estrutura para negócios que precisam crescer sem virar bagunça." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mentoria", "description": "Acompanhamento de fundadores e times, com foco em decisão." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Formação", "description": "Aulas e programas sobre criação e tração de novos negócios." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Eventos", "description": "O Destrava e outros encontros presenciais para quem empreende." } }
-        ]
-      }
-    }
-  ]
-}
-</script>
 <style>
 /* ==========================================================================
    Tokens — copiados do Umie Conecta Design System (claude.ai/design).
