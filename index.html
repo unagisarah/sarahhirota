@@ -62,6 +62,9 @@
   --shadow-md:0 8px 24px rgba(44,44,44,.12);
   --shadow-card:0 12px 32px rgba(0,107,113,.10);
   --ease:cubic-bezier(.4,0,.2,1);
+  /* Estava só como fallback dentro de cada var(--duration,240ms). Funcionava,
+     mas deixava o valor repetido em 4 lugares e sem dono. */
+  --duration:240ms;
 
   --maxw:1080px;
 }
@@ -256,7 +259,24 @@ section{padding:var(--space-9) 0}
   margin-bottom:var(--space-4);
 }
 
-/* ---------- contato ---------- */
+/* ---------- contato ----------
+   A agenda vem ANTES e sozinha, cheia, porque marcar conversa e a acao que ela
+   quer de fato. Os links de rede sao o segundo nivel. Se ela virasse mais um
+   card na mesma fileira, disputaria atencao de igual pra igual com o Instagram.
+*/
+.agenda-cta{
+  display:block;margin-top:var(--space-6);text-decoration:none;
+  background:var(--color-brand-primary);color:var(--text-on-dark);
+  border-radius:var(--radius-lg);padding:var(--space-5) var(--space-6);
+  box-shadow:var(--shadow-card);transition:transform var(--duration,240ms) var(--ease),
+  box-shadow var(--duration,240ms) var(--ease);
+}
+.agenda-cta:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.agenda-cta strong{
+  display:block;font-family:var(--font-display);font-size:1.25rem;font-weight:700;
+}
+.agenda-cta span{display:block;margin-top:6px;font-size:.95rem;opacity:.9}
+
 .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--space-4);margin-top:var(--space-6)}
 .link-item{
   background:var(--surface-card);border:1px solid var(--surface-border);
@@ -505,6 +525,10 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
     <p class="eyebrow">Contato</p>
     <h2>Vamos conversar</h2>
     <p class="intro">Me chama por onde for mais fácil pra você.</p>
+    <a class="agenda-cta" href="https://calendar.app.google/rUxgDvAbzntRUEDVA" target="_blank" rel="noopener">
+      <strong>Agendar uma conversa</strong>
+      <span>Primeiro Contato Umie Conecta &middot; escolha um horário na minha agenda</span>
+    </a>
     <div class="links">
       <a class="link-item" href="https://www.linkedin.com/in/sarahhirota" target="_blank" rel="noopener">
         <strong>LinkedIn</strong><span>É onde eu escrevo toda semana</span>
