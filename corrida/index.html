@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run Like a Mother — vem comigo | Sarah Hirota</title>
+<meta name="description" content="B2Mamy Run Like a Mother, 2ª edição São Paulo. 25 de setembro, Parque Villa Lobos. 4km de corrida ou caminhada, kit com camiseta, meia e brindes.">
+<meta property="og:title" content="Run Like a Mother — vem comigo">
+<meta property="og:description" content="25 de setembro, Parque Villa Lobos. 4km de corrida ou caminhada, com kit e café de networking.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Mesmos tokens do site (Umie Conecta Design System). Copiados de propósito:
+   a página é um arquivo solto, sem build, e token importado de outro arquivo
+   viraria uma dependência que ninguém lembra de atualizar.
+
+   O laranja do evento é da B2Mamy, não dela. Em vez de colar o laranja da
+   marca dos outros dentro do site dela, uso o --coral-600 que JÁ existe na
+   paleta da Umie e é o tom mais próximo. A página continua sendo dela.
+   ========================================================================== */
+:root{
+  --teal-900:#004a4f; --teal-700:#006b71; --teal-500:#0d8a8f;
+  --sage-600:#5f7a70; --sage-300:#a9bcb4;
+  --terracotta-600:#a4512b;
+  --coral-600:#df6b50; --coral-400:#e88f79;
+  --charcoal-900:#2c2c2c; --charcoal-700:#4e4e4e; --charcoal-400:#7d7d7d;
+  --cream-100:#f6f4ef; --gray-200:#d9d9d9; --white:#fff;
+
+  --color-brand-primary:var(--teal-700);
+  --color-evento:var(--coral-600);
+
+  --surface-page:var(--cream-100);
+  --surface-card:var(--white);
+  --surface-border:var(--gray-200);
+
+  --text-heading:var(--charcoal-900);
+  --text-body:var(--charcoal-700);
+  --text-muted:var(--charcoal-400);
+  --text-on-dark:var(--cream-100);
+
+  --font-display:'Baloo 2',ui-rounded,'Segoe UI',sans-serif;
+  --font-body:'Quicksand','Segoe UI',sans-serif;
+
+  --space-3:12px; --space-4:16px; --space-5:24px; --space-6:32px;
+  --space-7:48px; --space-8:64px;
+
+  --radius-md:16px; --radius-lg:28px; --radius-pill:999px;
+  --shadow-sm:0 2px 8px rgba(44,44,44,.08);
+  --shadow-md:0 8px 24px rgba(44,44,44,.12);
+  --shadow-card:0 12px 32px rgba(0,107,113,.10);
+  --ease:cubic-bezier(.4,0,.2,1);
+  --duration:240ms;
+  --maxw:760px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--surface-page);color:var(--text-body);
+  font-family:var(--font-body);font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--space-5)}
+
+h1,h2,h3{font-family:var(--font-display);color:var(--text-heading);line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,6vw,3rem)}
+h2{font-size:1.5rem;margin-top:var(--space-7)}
+h3{font-size:1.1rem}
+
+.topo{padding:var(--space-5) 0}
+.voltar{
+  font-family:var(--font-display);font-weight:700;font-size:.85rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--color-brand-primary);
+  text-decoration:none;
+}
+.voltar:hover{color:var(--teal-900)}
+
+.hero{padding:var(--space-5) 0 var(--space-6)}
+.eyebrow{
+  font-family:var(--font-display);font-weight:700;font-size:.8125rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--color-evento);
+  margin:0 0 var(--space-3);
+}
+.lede{font-size:1.1rem;margin:var(--space-4) 0 0;max-width:60ch}
+
+/* Cartão de dados: o que a pessoa procura antes de qualquer outra coisa é
+   quando, onde e quanto tempo. Fica no alto e separado do texto corrido. */
+.dados{
+  background:var(--surface-card);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-card);padding:var(--space-5) var(--space-6);
+  margin-top:var(--space-6);
+}
+.dados dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:var(--space-3) var(--space-5)}
+.dados dt{
+  font-family:var(--font-display);font-weight:700;color:var(--text-heading);
+  white-space:nowrap;
+}
+.dados dd{margin:0}
+
+.aviso{
+  margin-top:var(--space-6);padding:var(--space-4) var(--space-5);
+  border-left:4px solid var(--color-evento);background:rgba(223,107,80,.09);
+  border-radius:var(--radius-md);
+}
+.aviso strong{color:var(--terracotta-600)}
+
+.tamanhos{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);
+  margin-top:var(--space-5);
+}
+@media (max-width:640px){.tamanhos{grid-template-columns:repeat(2,1fr)}}
+.tam{
+  display:block;text-align:center;text-decoration:none;
+  background:var(--color-evento);color:var(--white);
+  border-radius:var(--radius-lg);padding:var(--space-5) var(--space-3);
+  box-shadow:var(--shadow-sm);
+  transition:transform var(--duration) var(--ease),box-shadow var(--duration) var(--ease);
+}
+.tam:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.tam strong{display:block;font-family:var(--font-display);font-size:1.9rem;font-weight:800;line-height:1}
+.tam span{display:block;margin-top:6px;font-size:.8rem;opacity:.92}
+
+.zap{
+  display:block;margin-top:var(--space-5);text-align:center;text-decoration:none;
+  border:2px solid var(--color-brand-primary);color:var(--color-brand-primary);
+  border-radius:var(--radius-lg);padding:var(--space-4) var(--space-5);
+  font-family:var(--font-display);font-weight:700;
+  transition:transform var(--duration) var(--ease);
+}
+.zap:hover{transform:translateY(-2px)}
+.zap span{display:block;font-family:var(--font-body);font-weight:500;font-size:.9rem;opacity:.85;margin-top:4px}
+
+.crono{margin:var(--space-5) 0 0;padding:0;list-style:none}
+.crono li{
+  display:grid;grid-template-columns:104px 1fr;gap:var(--space-4);
+  padding:var(--space-3) 0;border-bottom:1px solid var(--surface-border);
+}
+.crono li:last-child{border-bottom:0}
+.crono b{font-family:var(--font-display);color:var(--color-brand-primary)}
+
+.kit{margin:var(--space-4) 0 0;padding-left:1.15em}
+.kit li{margin:6px 0}
+
+footer{
+  margin-top:var(--space-8);padding:var(--space-6) 0 var(--space-8);
+  border-top:1px solid var(--surface-border);text-align:center;
+  font-size:.88rem;color:var(--text-muted);
+}
+footer a{color:var(--color-brand-primary)}
+</style>
+</head>
+<body>
+
+<div class="topo wrap"><a class="voltar" href="../">&larr; Sarah Hirota</a></div>
+
+<header class="hero wrap">
+  <p class="eyebrow">Sou embaixadora desta corrida</p>
+  <h1>Run Like a&nbsp;Mother</h1>
+  <p class="lede">
+    2ª edição São Paulo. Quatro quilômetros que você corre ou caminha, do seu
+    jeito, junto com um monte de mulher que também empreende. Depois tem café,
+    e é ali que as conversas acontecem.
+  </p>
+
+  <div class="dados">
+    <dl>
+      <dt>Quando</dt><dd>Sexta, 25 de setembro de 2026, das 6h30 às 10h</dd>
+      <dt>Onde</dt><dd>Parque Villa Lobos &middot; Av. Dra. Ruth Cardoso, 1230, Pinheiros, São Paulo</dd>
+      <dt>Percurso</dt><dd>4 km, corrida ou caminhada</dd>
+      <dt>Realização</dt><dd>B2Mamy</dd>
+    </dl>
+  </div>
+
+  <div class="aviso">
+    <strong>O lote vira dia 20 de agosto</strong> e o preço sobe. Se você já sabe
+    que vem, garantir agora sai mais barato.
+  </div>
+</header>
+
+<main class="wrap">
+  <h2>Escolha o tamanho da camiseta</h2>
+  <p>Seu ingresso já vem com o kit. O tamanho vai no link, então é só escolher o seu.</p>
+
+  <div class="tamanhos">
+    <!-- O P chegou faltando na primeira lista (vinha com o mesmo codigo do M).
+         Link certo confirmado por ela em 17/08. -->
+    <a class="tam" href="https://pay.youshop.com.br/FZEKG1UY6MAM9ATQ?aff=HLTOHRXCJTXHHX3V" target="_blank" rel="noopener">
+      <strong>P</strong><span>camiseta + meia + brinde</span>
+    </a>
+    <a class="tam" href="https://pay.youshop.com.br/RTAVGFCUW355LSJG?aff=HLTOHRXCJTXHHX3V" target="_blank" rel="noopener">
+      <strong>M</strong><span>camiseta + meia + brinde</span>
+    </a>
+    <a class="tam" href="https://pay.youshop.com.br/FJJRORLYJZLOHXOO?aff=HLTOHRXCJTXHHX3V" target="_blank" rel="noopener">
+      <strong>G</strong><span>camiseta + meia + brinde</span>
+    </a>
+    <a class="tam" href="https://pay.youshop.com.br/YHDLK6A58IHCU8BT?aff=HLTOHRXCJTXHHX3V" target="_blank" rel="noopener">
+      <strong>GG</strong><span>camiseta + meia + brinde</span>
+    </a>
+  </div>
+
+  <a class="zap" href="https://wa.me/5511920492146?text=Quero%20participar%20do%20Run%20Like%20a%20Mother%21%20Tamanho%20da%20camiseta%3A%20" target="_blank" rel="noopener">
+    Ficou em dúvida no tamanho? Me chama no WhatsApp
+    <span>A mensagem já vai escrita, é só completar com o seu tamanho</span>
+  </a>
+
+  <h2>O que vem no kit</h2>
+  <ul class="kit">
+    <li>Camiseta personalizada da corrida</li>
+    <li>Meia da Run Like a Mother</li>
+    <li>Brindes das parceiras</li>
+  </ul>
+
+  <h2>Como é a manhã</h2>
+  <ul class="crono">
+    <li><b>6h30</b><span>Credenciamento, entrega dos kits e aquecimento</span></li>
+    <li><b>7h30</b><span>Largada da caminhada e da corrida</span></li>
+    <li><b>8h30</b><span>Chegada das participantes e foto oficial</span></li>
+    <li><b>8h30 &agrave;s 10h</b><span>Café e networking</span></li>
+    <li><b>10h</b><span>Encerramento</span></li>
+  </ul>
+</main>
+
+<footer class="wrap">
+  <p>
+    Sarah Hirota &middot; embaixadora da B2Mamy Run Like a Mother<br>
+    <a href="../">sarahhirota.com</a>
+  </p>
+</footer>
+
+</body>
+</html>
