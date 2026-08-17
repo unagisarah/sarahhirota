@@ -264,18 +264,30 @@ section{padding:var(--space-9) 0}
    quer de fato. Os links de rede sao o segundo nivel. Se ela virasse mais um
    card na mesma fileira, disputaria atencao de igual pra igual com o Instagram.
 */
-.agenda-cta{
-  display:block;margin-top:var(--space-6);text-decoration:none;
+/* Duas colunas explicitas, nao auto-fit: sao exatamente dois botoes e eles
+   viram um em cima do outro no celular. */
+.acoes{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-6)}
+@media (max-width:720px){.acoes{grid-template-columns:1fr}}
+
+.agenda-cta,.zap-cta{
+  display:block;text-decoration:none;
   background:var(--color-brand-primary);color:var(--text-on-dark);
   border-radius:var(--radius-lg);padding:var(--space-5) var(--space-6);
   box-shadow:var(--shadow-card);transition:transform var(--duration,240ms) var(--ease),
   box-shadow var(--duration,240ms) var(--ease);
 }
-.agenda-cta:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.agenda-cta strong{
+/* O WhatsApp e vazado, nao cheio: as duas acoes lado a lado com o mesmo peso
+   visual empatariam, e agendar conversa vale mais pra ela do que uma mensagem
+   solta. Mesmo tamanho, hierarquia pela cor. */
+.zap-cta{
+  background:transparent;color:var(--color-brand-primary);
+  border:2px solid var(--color-brand-primary);box-shadow:none;
+}
+.agenda-cta:hover,.zap-cta:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.agenda-cta strong,.zap-cta strong{
   display:block;font-family:var(--font-display);font-size:1.25rem;font-weight:700;
 }
-.agenda-cta span{display:block;margin-top:6px;font-size:.95rem;opacity:.9}
+.agenda-cta span,.zap-cta span{display:block;margin-top:6px;font-size:.95rem;opacity:.9}
 
 .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--space-4);margin-top:var(--space-6)}
 .link-item{
@@ -525,10 +537,16 @@ footer p{margin:var(--space-3) 0 0;font-size:.88rem;color:var(--text-muted)}
     <p class="eyebrow">Contato</p>
     <h2>Vamos conversar</h2>
     <p class="intro">Me chama por onde for mais fácil pra você.</p>
-    <a class="agenda-cta" href="https://calendar.app.google/rUxgDvAbzntRUEDVA" target="_blank" rel="noopener">
-      <strong>Agendar uma conversa</strong>
-      <span>Primeiro Contato Umie Conecta &middot; escolha um horário na minha agenda</span>
-    </a>
+    <div class="acoes">
+      <a class="agenda-cta" href="https://calendar.app.google/rUxgDvAbzntRUEDVA" target="_blank" rel="noopener">
+        <strong>Agendar uma conversa</strong>
+        <span>Primeiro Contato Umie Conecta &middot; escolha um horário na minha agenda</span>
+      </a>
+      <a class="zap-cta" href="https://wa.me/5511920492146?text=Oi%2C%20Sarah%21%20Vim%20pelo%20seu%20site." target="_blank" rel="noopener">
+        <strong>Chamar no WhatsApp</strong>
+        <span>Já vai com uma mensagem escrita, é só apertar enviar</span>
+      </a>
+    </div>
     <div class="links">
       <a class="link-item" href="https://www.linkedin.com/in/sarahhirota" target="_blank" rel="noopener">
         <strong>LinkedIn</strong><span>É onde eu escrevo toda semana</span>
