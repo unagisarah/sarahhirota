@@ -73,7 +73,11 @@ body{
   font-family:var(--font-body);font-size:17px;line-height:var(--line-normal);
   font-weight:500;-webkit-font-smoothing:antialiased;
 }
-img{max-width:100%;display:block}
+/* height:auto nao e enfeite: as <img> tem width/height no HTML (evita o layout
+   pular enquanto carrega). Sem height:auto, quando o max-width encolhe a
+   largura, a altura FICA no valor do atributo e a foto estica. Foi o que
+   deformou a foto do "Prazer, Sarah" no desktop dela em 17/08. */
+img{max-width:100%;height:auto;display:block}
 a{color:var(--color-brand-primary)}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--space-5)}
 h1,h2,h3{font-family:var(--font-display);color:var(--text-heading);margin:0}
@@ -166,7 +170,13 @@ section{padding:var(--space-9) 0}
 
 /* ---------- sobre ---------- */
 .sobre-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--space-8);align-items:center}
-.sobre-grid img{border-radius:var(--radius-lg);box-shadow:var(--shadow-card)}
+/* Teto de altura tambem no desktop: sem ele a foto vertical fica bem mais alta
+   que o texto ao lado e a secao vira uma coluna de foto com um paragrafo
+   perdido do lado. */
+.sobre-grid img{
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-card);
+  width:100%;max-height:560px;object-fit:cover;object-position:center 20%;
+}
 
 /* Aqui havia uma textura de ondas pontilhadas no rodape. Saiu: logo abaixo dela
    comeca a onda da transicao de secao, e os dois desenhos de onda, um pontilhado
