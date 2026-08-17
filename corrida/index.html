@@ -8,6 +8,15 @@
 <meta property="og:title" content="Run Like a Mother — vem comigo">
 <meta property="og:description" content="25 de setembro, Parque Villa Lobos. 4km de corrida ou caminhada, com kit e café de networking.">
 <meta property="og:type" content="website">
+<!-- og:image PRECISA ser endereço absoluto: o WhatsApp busca a imagem do servidor
+     dele, não do navegador de quem recebe, então caminho relativo não resolve e o
+     link chega sem prévia. É esta arte que aparece quando ela manda o link nos
+     grupos, e é por isso que ela existe aqui. -->
+<meta property="og:image" content="https://sarahhirota.com/corrida/arte-embaixadora.jpg">
+<meta property="og:image:width" content="720">
+<meta property="og:image:height" content="1280">
+<meta property="og:url" content="https://sarahhirota.com/corrida/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -86,6 +95,11 @@ h3{font-size:1.1rem}
 }
 .lede{font-size:1.1rem;margin:var(--space-4) 0 0;max-width:60ch}
 
+.arte{
+  margin:var(--space-5) auto 0;border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-card);max-height:70vh;width:auto;
+}
+
 /* Cartão de dados: o que a pessoa procura antes de qualquer outra coisa é
    quando, onde e quanto tempo. Fica no alto e separado do texto corrido. */
 .dados{
@@ -159,6 +173,11 @@ footer a{color:var(--color-brand-primary)}
 <header class="hero wrap">
   <p class="eyebrow">Sou embaixadora desta corrida</p>
   <h1>Run Like a&nbsp;Mother</h1>
+  <!-- Arte oficial da B2Mamy com o selo de embaixadora dela. Limitada em altura
+       porque é 9:16: sem teto, no computador ela ocuparia a tela inteira e
+       empurraria a informação do evento pra baixo da dobra. -->
+  <img class="arte" src="arte-embaixadora.jpg" width="720" height="1280"
+       alt="Sarah Hirota, embaixadora da Run Like a Mother. 25/09, 6h30 às 10h, Parque Villa Lobos, São Paulo.">
   <p class="lede">
     2ª edição São Paulo. Quatro quilômetros que você corre ou caminha, do seu
     jeito, junto com um monte de mulher que também empreende. Depois tem café,
