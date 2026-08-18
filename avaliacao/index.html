@@ -45,7 +45,11 @@ input[type=text],select,textarea{
 textarea{min-height:96px;resize:vertical}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--teal-700);outline-offset:1px;border-color:transparent}
 /* Nota como botões: no celular, digitar número é fricção e fricção derruba resposta. */
-.notas{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.notas{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;align-items:center}
+/* A regra global de label dá margem em cima, e o :first-of-type zera essa margem
+   só no primeiro. Dentro da fileira de notas isso jogava o 0 pra cima e pra fora
+   da linha, porque cada botão é um label. Aqui a margem morre. */
+.notas label{margin:0;display:inline-flex}
 .notas input{position:absolute;opacity:0;width:0;height:0}
 .notas span{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;
   border:1.5px solid var(--gray-200);border-radius:999px;cursor:pointer;font-weight:600}
