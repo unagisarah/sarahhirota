@@ -122,6 +122,20 @@ h3{font-size:1.1rem}
 }
 .aviso strong{color:var(--terracotta-600)}
 
+/* Bloco de compra no topo, pedido dela em 18/08/2026: "deixa os botoes de
+   compra no topo bem claro tipo compre aqui o seu kit (com as instrucoes). So
+   depois a foto e outras info do evento". Quem abre este link ja veio decidido
+   pelo convite dela; fazer a pessoa rolar a foto inteira antes do botao custa
+   inscricao. */
+.compra{
+  background:var(--surface-card);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-card);padding:var(--space-6);
+  border-top:5px solid var(--color-evento);
+}
+.compra h2{margin-top:0}
+.compra .passos{margin:var(--space-3) 0 0}
+.compra .passos b{color:var(--text-heading)}
+
 .tamanhos{
   display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);
   margin-top:var(--space-5);
@@ -177,25 +191,10 @@ footer a{color:var(--color-brand-primary)}
 <header class="hero wrap">
   <p class="eyebrow">Sou embaixadora desta corrida</p>
   <h1>Run Like a&nbsp;Mother</h1>
-  <!-- A foto dela, sem a arte de selo de embaixadora: pedido dela em 17/08. A
-       arte continua no repositório e é o que ela usa no Instagram; aqui a página
-       fala com a voz dela, não com a peça institucional do evento. -->
-  <img class="arte" src="sarah-corrida.jpg" width="842" height="1264"
-       alt="Sarah Hirota correndo no parque, sorrindo, de camiseta laranja.">
   <p class="lede">
-    2ª edição São Paulo. Quatro quilômetros que você corre ou caminha, do seu
-    jeito, junto com um monte de mulher que também empreende. Depois tem café,
-    e é ali que as conversas acontecem.
+    Sexta, 25 de setembro, das 6h30 às 10h, no Parque Villa Lobos, em São Paulo.
+    Quatro quilômetros que você corre ou caminha, do seu jeito.
   </p>
-
-  <div class="dados">
-    <dl>
-      <dt>Quando</dt><dd>Sexta, 25 de setembro de 2026, das 6h30 às 10h</dd>
-      <dt>Onde</dt><dd>Parque Villa Lobos &middot; Av. Dra. Ruth Cardoso, 1230, Pinheiros, São Paulo</dd>
-      <dt>Percurso</dt><dd>4 km, corrida ou caminhada</dd>
-      <dt>Realização</dt><dd>B2Mamy</dd>
-    </dl>
-  </div>
 
   <div class="aviso">
     <strong>O lote vira dia 20 de agosto</strong> e o preço sobe. Se você já sabe
@@ -203,9 +202,15 @@ footer a{color:var(--color-brand-primary)}
   </div>
 </header>
 
-<main class="wrap">
-  <h2>Escolha o tamanho da camiseta</h2>
-  <p>Seu ingresso já vem com o kit. O tamanho vai no link, então é só escolher o seu.</p>
+<div class="wrap">
+<section class="compra">
+  <h2>Compre aqui o seu kit</h2>
+  <p class="passos">
+    O ingresso já vem com o kit completo: camiseta, meia e brindes.
+    <b>O tamanho da camiseta é escolhido pelo link</b>, então toque no seu tamanho
+    abaixo e finalize a compra na página que abrir. Cada botão leva ao kit
+    daquele tamanho.
+  </p>
 
   <div class="tamanhos">
     <!-- Estes quatro links sao a TERCEIRA lista do dia 17/08. A primeira veio
@@ -236,6 +241,29 @@ footer a{color:var(--color-brand-primary)}
     Ficou em dúvida no tamanho? Me chama no WhatsApp
     <span>A mensagem já vai escrita, é só completar com o seu tamanho</span>
   </a>
+</section>
+</div>
+
+<main class="wrap">
+  <!-- A foto dela, sem a arte de selo de embaixadora: pedido dela em 17/08. A
+       arte continua no repositório e é o que ela usa no Instagram; aqui a página
+       fala com a voz dela, não com a peça institucional do evento. -->
+  <img class="arte" src="sarah-corrida.jpg" width="842" height="1264"
+       alt="Sarah Hirota correndo no parque, sorrindo, de camiseta laranja.">
+  <p class="lede">
+    2ª edição São Paulo. Quatro quilômetros que você corre ou caminha, do seu
+    jeito, junto com um monte de mulher que também empreende. Depois tem café,
+    e é ali que as conversas acontecem.
+  </p>
+
+  <div class="dados">
+    <dl>
+      <dt>Quando</dt><dd>Sexta, 25 de setembro de 2026, das 6h30 às 10h</dd>
+      <dt>Onde</dt><dd>Parque Villa Lobos &middot; Av. Dra. Ruth Cardoso, 1230, Pinheiros, São Paulo</dd>
+      <dt>Percurso</dt><dd>4 km, corrida ou caminhada</dd>
+      <dt>Realização</dt><dd>B2Mamy</dd>
+    </dl>
+  </div>
 
   <h2>O que vem no kit</h2>
   <ul class="kit">
