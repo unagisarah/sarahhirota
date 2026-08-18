@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como foi a nossa conversa? | Sarah Hirota</title>
+<meta name="description" content="Avaliação rápida da sessão de mentoria com Sarah Hirota. Leva um minuto.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Tokens do Umie Conecta Design System, copiados como na página da corrida:
+   a página é arquivo solto, sem build, e import viraria dependência esquecida. */
+:root{
+  --teal-900:#004a4f; --teal-700:#006b71;
+  --coral-600:#df6b50;
+  --charcoal-900:#2c2c2c; --charcoal-700:#4e4e4e; --charcoal-400:#7d7d7d;
+  --cream-100:#f6f4ef; --gray-200:#d9d9d9; --white:#fff;
+  --font-display:'Baloo 2',ui-rounded,'Segoe UI',sans-serif;
+  --font-body:'Quicksand','Segoe UI',sans-serif;
+  --space-3:12px; --space-4:16px; --space-5:24px; --space-6:32px; --space-7:48px;
+  --radius-md:16px; --radius-lg:28px;
+  --shadow-card:0 12px 32px rgba(0,107,113,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream-100);color:var(--charcoal-700);
+     font-family:var(--font-body);font-size:17px;line-height:1.55}
+.wrap{max-width:640px;margin:0 auto;padding:var(--space-6) var(--space-5) var(--space-7)}
+h1{font-family:var(--font-display);color:var(--charcoal-900);font-size:clamp(1.8rem,5vw,2.4rem);
+   line-height:1.15;margin:0 0 var(--space-4)}
+.lede{margin:0 0 var(--space-6);max-width:52ch}
+.eyebrow{font-family:var(--font-display);font-weight:700;font-size:.8125rem;letter-spacing:.14em;
+         text-transform:uppercase;color:var(--teal-700);margin:0 0 var(--space-3)}
+form{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);
+     padding:var(--space-6)}
+label{display:block;font-family:var(--font-display);font-weight:700;color:var(--charcoal-900);
+      margin:var(--space-5) 0 6px}
+label:first-of-type{margin-top:0}
+.dica{display:block;font-family:var(--font-body);font-weight:500;font-size:.9rem;
+      color:var(--charcoal-400);margin-top:2px}
+input[type=text],select,textarea{
+  width:100%;padding:12px 14px;border:1.5px solid var(--gray-200);border-radius:var(--radius-md);
+  font-family:var(--font-body);font-size:16px;color:var(--charcoal-900);background:var(--white)}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--teal-700);outline-offset:1px;border-color:transparent}
+/* Nota como botões: no celular, digitar número é fricção e fricção derruba resposta. */
+.notas{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.notas input{position:absolute;opacity:0;width:0;height:0}
+.notas span{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;
+  border:1.5px solid var(--gray-200);border-radius:999px;cursor:pointer;font-weight:600}
+.notas input:checked + span{background:var(--teal-700);border-color:var(--teal-700);color:var(--white)}
+.check{display:flex;gap:10px;align-items:flex-start;margin-top:var(--space-6);
+       background:rgba(223,107,80,.08);border-left:4px solid var(--coral-600);
+       padding:var(--space-4);border-radius:var(--radius-md)}
+.check input{margin-top:4px;width:20px;height:20px;flex:none}
+.check span{font-size:.95rem}
+button{margin-top:var(--space-6);width:100%;padding:16px;border:0;border-radius:999px;
+  background:var(--teal-700);color:var(--white);font-family:var(--font-display);font-weight:700;
+  font-size:1.05rem;cursor:pointer}
+button:hover{background:var(--teal-900)}
+.escondido{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+footer{margin-top:var(--space-6);text-align:center;font-size:.85rem;color:var(--charcoal-400)}
+footer a{color:var(--teal-700)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">Leva um minuto</p>
+  <h1>Como foi a nossa conversa?</h1>
+  <p class="lede">
+    Sua resposta me ajuda a melhorar a próxima sessão e a entender o que
+    realmente muda depois da nossa conversa. Pode ser sincera, é pra isso.
+  </p>
+
+  <form method="POST" action="https://tb.unagi-ag.work/avaliacao">
+    <!-- Armadilha pra robô: humano não vê, robô preenche e a resposta é descartada. -->
+    <div class="escondido" aria-hidden="true">
+      <label for="empresa_site">Site da empresa</label>
+      <input type="text" id="empresa_site" name="empresa_site" tabindex="-1" autocomplete="off">
+    </div>
+
+    <label for="nome">Seu nome</label>
+    <input type="text" id="nome" name="nome" required autocomplete="name">
+
+    <label for="negocio">Seu negócio</label>
+    <input type="text" id="negocio" name="negocio" autocomplete="organization">
+
+    <label for="programa">Onde a gente conversou</label>
+    <select id="programa" name="programa">
+      <option>Mentoria Lovers (B2Mamy)</option>
+      <option>Mentoria ABStartups</option>
+      <option>Mentoria de Destrave</option>
+      <option>Outra conversa</option>
+    </select>
+
+    <label>O quanto a conversa contribuiu pro seu negócio?
+      <span class="dica">0 é nada, 10 é muito</span></label>
+    <div class="notas">
+      <label><input type="radio" name="nota_contribuicao" value="0"><span>0</span></label>
+      <label><input type="radio" name="nota_contribuicao" value="1"><span>1</span></label>
+      <label><input type="radio" name="nota_contribuicao" value="2"><span>2</span></label>
+      <label><input type="radio" name="nota_contribuicao" value="3"><span>3</span></label>
+      <label><input type="radio" name="nota_contribuicao" value="4"><span>4</span></label>
+      <label><input type="radio" name="nota_contribuicao" value="5"><span>5</span></label>
+      <label><input type="radio" name="nota_contribuicao" value="6"><span>6</span></label>
+      <label><input type="radio" name="nota_contribuicao" value="7"><span>7</span></label>
+      <label><input type="radio" name="nota_contribuicao" value="8"><span>8</span></label>
+      <label><input type="radio" name="nota_contribuicao" value="9"><span>9</span></label>
+      <label><input type="radio" name="nota_contribuicao" value="10"><span>10</span></label>
+    </div>
+
+    <label>O quanto você recomendaria essa conversa pra outra pessoa que empreende?</label>
+    <div class="notas">
+      <label><input type="radio" name="nota_recomendacao" value="0"><span>0</span></label>
+      <label><input type="radio" name="nota_recomendacao" value="1"><span>1</span></label>
+      <label><input type="radio" name="nota_recomendacao" value="2"><span>2</span></label>
+      <label><input type="radio" name="nota_recomendacao" value="3"><span>3</span></label>
+      <label><input type="radio" name="nota_recomendacao" value="4"><span>4</span></label>
+      <label><input type="radio" name="nota_recomendacao" value="5"><span>5</span></label>
+      <label><input type="radio" name="nota_recomendacao" value="6"><span>6</span></label>
+      <label><input type="radio" name="nota_recomendacao" value="7"><span>7</span></label>
+      <label><input type="radio" name="nota_recomendacao" value="8"><span>8</span></label>
+      <label><input type="radio" name="nota_recomendacao" value="9"><span>9</span></label>
+      <label><input type="radio" name="nota_recomendacao" value="10"><span>10</span></label>
+    </div>
+
+    <label for="mudou">O que mudou na sua cabeça depois da conversa?</label>
+    <textarea id="mudou" name="mudou" placeholder="Pode ser uma frase."></textarea>
+
+    <label for="vou_fazer">O que você vai fazer de diferente nos próximos 15 dias?</label>
+    <textarea id="vou_fazer" name="vou_fazer" placeholder="Uma coisa só já basta."></textarea>
+
+    <label class="check">
+      <input type="checkbox" name="autoriza" value="1">
+      <span>Pode usar a minha resposta como depoimento, com o meu nome e o do meu negócio.</span>
+    </label>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <footer><a href="/">sarahhirota.com</a></footer>
+</main>
+</body>
+</html>
