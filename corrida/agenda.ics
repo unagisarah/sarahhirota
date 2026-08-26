@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sarah Hirota//Run Like a Mother//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/Sao_Paulo
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:-0300
+TZOFFSETTO:-0300
+TZNAME:-03
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:run-like-a-mother-2026-09-26@sarahhirota.com
+DTSTAMP:20260826T200000Z
+DTSTART;TZID=America/Sao_Paulo:20260926T063000
+DTEND;TZID=America/Sao_Paulo:20260926T100000
+SUMMARY:Run Like a Mother - corrida da B2Mamy
+LOCATION:Parque Villa Lobos, Sao Paulo
+DESCRIPTION:4 km de corrida ou caminhada no Parque Villa Lobos, com cafe e n
+ etworking depois da chegada.\n\n6h30 credenciamento e retirada do kit\n7h30 
+ largada\n8h30 chegada e foto oficial\n8h30 as 10h cafe e networking\n\nO pon
+ to de encontro exato sera combinado no grupo do WhatsApp.\n\nMais informacoe
+ s: https://sarahhirota.com/corrida
+URL:https://sarahhirota.com/corrida
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Amanha e a Run Like a Mother
+END:VALARM
+END:VEVENT
+END:VCALENDAR
