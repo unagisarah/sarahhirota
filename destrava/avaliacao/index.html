@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como foi o Destrava pra você? | Sarah Hirota</title>
+<meta name="description" content="Avaliação do Destrava na Feirinha Ditacuja. Quatro perguntas, menos de 3 minutos.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Identidade do Destrava, não a da Umie: quem responde acabou de passar um
+   domingo cercado dessas cores, nos cards, no cartaz e nos stories. Tokens
+   copiados como na página da corrida, porque a página é arquivo solto sem build. */
+:root{
+  --creme:#FFF9EF; --teal:#14505A; --teal-escuro:#0d3841;
+  --verde:#87A58F; --terracota:#D45B3D;
+  --tinta:#22333a; --tinta-fraca:#6b7c83; --linha:#e2dcd0; --branco:#fff;
+  --fonte:'Montserrat',ui-sans-serif,'Segoe UI',sans-serif;
+  --e3:12px; --e4:16px; --e5:24px; --e6:32px; --e7:48px;
+  --raio:16px; --raio-g:28px;
+  --sombra:0 12px 32px rgba(20,80,90,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--tinta);
+     font-family:var(--fonte);font-size:17px;line-height:1.55}
+.wrap{max-width:640px;margin:0 auto;padding:var(--e6) var(--e5) var(--e7)}
+h1{color:var(--teal);font-size:clamp(1.8rem,5vw,2.4rem);font-weight:800;
+   line-height:1.15;margin:0 0 var(--e4)}
+.lede{margin:0 0 var(--e6);max-width:52ch}
+.eyebrow{font-weight:700;font-size:.8125rem;letter-spacing:.14em;
+         text-transform:uppercase;color:var(--terracota);margin:0 0 var(--e3)}
+form{background:var(--branco);border-radius:var(--raio-g);box-shadow:var(--sombra);
+     padding:var(--e6)}
+label{display:block;font-weight:700;color:var(--teal);margin:var(--e5) 0 6px}
+label:first-of-type{margin-top:0}
+.dica{display:block;font-weight:500;font-size:.9rem;color:var(--tinta-fraca);margin-top:2px}
+input[type=text],textarea{
+  width:100%;padding:12px 14px;border:1.5px solid var(--linha);border-radius:var(--raio);
+  font-family:var(--fonte);font-size:16px;color:var(--tinta);background:var(--branco)}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:transparent}
+/* Nota como botão: no celular, digitar número é fricção e fricção derruba resposta. */
+.notas{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;align-items:center}
+.notas label{margin:0;display:inline-flex}
+.notas input{position:absolute;opacity:0;width:0;height:0}
+.notas span{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:48px;
+  border:1.5px solid var(--linha);border-radius:999px;cursor:pointer;font-weight:700;font-size:1.05rem}
+.notas input:checked + span{background:var(--teal);border-color:var(--teal);color:var(--branco)}
+.notas input:focus-visible + span{outline:2px solid var(--terracota);outline-offset:2px}
+.pontas{display:flex;justify-content:space-between;gap:var(--e4);
+        margin-top:8px;font-size:.82rem;color:var(--tinta-fraca)}
+.opcoes{margin-top:8px}
+.opcoes label{display:flex;gap:10px;align-items:flex-start;margin:0 0 10px;
+              font-weight:500;color:var(--tinta)}
+.opcoes input{margin-top:3px;width:20px;height:20px;flex:none;accent-color:var(--teal)}
+.caixa{background:rgba(212,91,61,.07);border-left:4px solid var(--terracota);
+       padding:var(--e4) var(--e5);border-radius:var(--raio);margin-top:var(--e6)}
+.caixa > label:first-of-type{margin-top:0}
+button{margin-top:var(--e6);width:100%;padding:16px;border:0;border-radius:999px;
+  background:var(--teal);color:var(--branco);font-family:var(--fonte);font-weight:700;
+  font-size:1.05rem;cursor:pointer}
+button:hover{background:var(--teal-escuro)}
+.escondido{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.lgpd{margin:var(--e5) 0 0;font-size:.8rem;line-height:1.5;color:var(--tinta-fraca)}
+.lgpd b{color:var(--tinta)}
+.lgpd a{color:var(--teal)}
+footer{margin-top:var(--e6);text-align:center;font-size:.85rem;color:var(--tinta-fraca)}
+footer a{color:var(--teal)}
+</style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCPBCFHWW5"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-GCPBCFHWW5');
+</script>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">Menos de 3 minutos</p>
+  <h1>Como foi o Destrava pra você?</h1>
+  <p class="lede">
+    São quatro perguntas sobre o domingo na Feirinha Ditacuja. O que você
+    escrever aqui é o que vai desenhar a próxima edição e os temas das duas
+    mentorias online. Pode ser sincera, é pra isso.
+  </p>
+
+  <form method="POST" action="https://tb.unagi-ag.work/avaliacao-destrava">
+    <!-- Armadilha pra robô: humano não vê, robô preenche e a resposta é descartada. -->
+    <div class="escondido" aria-hidden="true">
+      <label for="empresa_site">Site da empresa</label>
+      <input type="text" id="empresa_site" name="empresa_site" tabindex="-1" autocomplete="off">
+    </div>
+
+    <label for="nome">Seu nome</label>
+    <input type="text" id="nome" name="nome" required autocomplete="name">
+
+    <label for="negocio">Seu negócio</label>
+    <input type="text" id="negocio" name="negocio" autocomplete="organization">
+
+    <label>De 1 a 5, como foi o Destrava pra você?</label>
+    <div class="notas">
+      <label><input type="radio" name="nota" value="1" required><span>1</span></label>
+      <label><input type="radio" name="nota" value="2"><span>2</span></label>
+      <label><input type="radio" name="nota" value="3"><span>3</span></label>
+      <label><input type="radio" name="nota" value="4"><span>4</span></label>
+      <label><input type="radio" name="nota" value="5"><span>5</span></label>
+    </div>
+    <div class="pontas">
+      <span>1 · Não foi o que eu esperava</span>
+      <span>5 · Superou o que eu esperava</span>
+    </div>
+
+    <label for="aprendizado">Qual aprendizado ficou com você?
+      <span class="dica">Pode ser algo do bate-papo, uma ideia que veio conversando
+      com outra expositora, ou algo que você já vai aplicar no seu negócio.</span></label>
+    <textarea id="aprendizado" name="aprendizado" required></textarea>
+
+    <label for="melhorar">O que a gente pode melhorar na próxima edição?
+      <span class="dica">Fala sem medo. Crítica aqui vale mais que elogio.</span></label>
+    <textarea id="melhorar" name="melhorar"></textarea>
+
+    <div class="caixa">
+      <label for="depoimento">Quer deixar um depoimento sobre o Destrava?
+        <span class="dica">Opcional. Uma ou duas frases, do seu jeito.</span></label>
+      <textarea id="depoimento" name="depoimento"></textarea>
+
+      <label>Se você deixou um depoimento, podemos publicar?</label>
+      <div class="opcoes">
+        <label><input type="radio" name="autoriza" value="nome">
+          <span>Pode publicar com o meu nome e o meu @</span></label>
+        <label><input type="radio" name="autoriza" value="anonimo">
+          <span>Pode publicar sem me identificar</span></label>
+        <label><input type="radio" name="autoriza" value="nao">
+          <span>Prefiro que não seja publicado</span></label>
+      </div>
+
+      <label for="instagram">Seu @ do Instagram
+        <span class="dica">Só se você autorizou publicar com o seu nome.</span></label>
+      <input type="text" id="instagram" name="instagram" placeholder="@seunegocio">
+    </div>
+
+    <button type="submit">Enviar</button>
+
+    <p class="lgpd">
+      <b>Sobre os seus dados.</b> Quem coleta essas respostas é a Sarah Hirota,
+      e o objetivo é melhorar o Destrava e escolher os temas das mentorias. O que
+      você escrever fica guardado no servidor dela e não é compartilhado com mais
+      ninguém. Seu depoimento só vira público se você marcar a opção acima. Você
+      pode pedir para ver, corrigir ou apagar o que enviou a qualquer momento,
+      escrevendo para <a href="mailto:unagi.sarah@gmail.com">unagi.sarah@gmail.com</a>.
+      Ao enviar, você concorda com isso.
+    </p>
+  </form>
+
+  <footer><a href="/">sarahhirota.com</a></footer>
+</main>
+</body>
+</html>
