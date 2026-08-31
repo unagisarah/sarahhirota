@@ -153,6 +153,31 @@ footer a{color:var(--teal-700)}
     </label>
 
     <button type="submit">Enviar</button>
+<script>
+// 31/08/2026: a Lucimara mandou a mesma avaliação QUATRO vezes em 14 segundos.
+// A página não devolvia nada ao clicar, então ela achou que não tinha ido e
+// clicou de novo. Cada clique virou um registro, um aviso pra Sarah e uma
+// mensagem no grupo das organizadoras.
+// Aqui é a primeira barreira: o botão trava e diz que está enviando. A garantia
+// mesmo está no servidor, que ignora reenvio idêntico (clique duplo rápido e
+// reenvio do navegador passam por baixo disto).
+(function () {
+  var f = document.currentScript.closest('form');
+  if (!f) return;
+  var enviado = false;
+  f.addEventListener('submit', function (ev) {
+    if (enviado) { ev.preventDefault(); return; }
+    enviado = true;
+    var b = f.querySelector('button[type=submit]');
+    // NÃO desabilitar aqui dentro: botão disabled durante o evento de submit
+    // faz alguns navegadores cancelarem o envio, e aí a pessoa perde a resposta
+    // inteira. Troco o texto agora e desabilito no próximo tique, quando o POST
+    // já saiu.
+    if (b) b.textContent = 'Enviando...';
+    setTimeout(function () { if (b) b.disabled = true; }, 0);
+  });
+})();
+</script>
 
     <p class="lgpd">
       <b>Sobre os seus dados.</b> Quem coleta essas respostas é a Sarah Hirota,
