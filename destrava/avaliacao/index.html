@@ -42,7 +42,9 @@ input[type=text],textarea{
 textarea{min-height:96px;resize:vertical}
 input:focus,textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:transparent}
 /* Nota como botão: no celular, digitar número é fricção e fricção derruba resposta. */
-.notas{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;align-items:center}
+/* A fileira ocupa a largura toda: as legendas das pontas usam space-between e,
+   com os botões amontoados à esquerda, o "5 · Superou" ficava sozinho lá na direita. */
+.notas{display:flex;justify-content:space-between;gap:8px;margin-top:8px;align-items:center}
 .notas label{margin:0;display:inline-flex}
 .notas input{position:absolute;opacity:0;width:0;height:0}
 .notas span{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:48px;
@@ -50,7 +52,9 @@ input:focus,textarea:focus{outline:2px solid var(--teal);outline-offset:1px;bord
 .notas input:checked + span{background:var(--teal);border-color:var(--teal);color:var(--branco)}
 .notas input:focus-visible + span{outline:2px solid var(--terracota);outline-offset:2px}
 .pontas{display:flex;justify-content:space-between;gap:var(--e4);
-        margin-top:8px;font-size:.82rem;color:var(--tinta-fraca)}
+        margin-top:10px;font-size:.82rem;color:var(--tinta-fraca)}
+.pontas span{flex:0 1 auto;max-width:46%}
+.pontas span:last-child{text-align:right}
 .opcoes{margin-top:8px}
 .opcoes label{display:flex;gap:10px;align-items:flex-start;margin:0 0 10px;
               font-weight:500;color:var(--tinta)}
@@ -98,7 +102,7 @@ gtag('config','G-GCPBCFHWW5');
     <label for="nome">Seu nome</label>
     <input type="text" id="nome" name="nome" required autocomplete="name">
 
-    <label for="negocio">Seu negócio</label>
+    <label for="negocio">Nome do seu negócio</label>
     <input type="text" id="negocio" name="negocio" autocomplete="organization">
 
     <label>De 1 a 5, como foi o Destrava pra você?</label>
@@ -115,8 +119,9 @@ gtag('config','G-GCPBCFHWW5');
     </div>
 
     <label for="aprendizado">Qual aprendizado ficou com você?
-      <span class="dica">Pode ser algo do bate-papo, uma ideia que veio conversando
-      com outra expositora, ou algo que você já vai aplicar no seu negócio.</span></label>
+      <span class="dica">Pode ser algo do bate-papo, do seu pitch, de uma visita
+      nos estandes, uma ideia que veio conversando com outra expositora, ou algo
+      que você já vai aplicar no seu negócio.</span></label>
     <textarea id="aprendizado" name="aprendizado" required></textarea>
 
     <label for="melhorar">O que a gente pode melhorar na próxima edição?
