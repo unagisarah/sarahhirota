@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como é a sua rotina de feira? | Destrava</title>
+<meta name="description" content="Pesquisa das organizadoras do Destrava sobre a rotina de quem vende em feira. Uns 5 minutos.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Identidade do Destrava, não a da Umie: quem responde acabou de passar um
+   domingo cercado dessas cores, nos cards, no cartaz e nos stories. Tokens
+   copiados como na página da corrida, porque a página é arquivo solto sem build. */
+:root{
+  --creme:#FFF9EF; --teal:#14505A; --teal-escuro:#0d3841;
+  --verde:#87A58F; --terracota:#D45B3D;
+  --tinta:#22333a; --tinta-fraca:#6b7c83; --linha:#e2dcd0; --branco:#fff;
+  --fonte:'Montserrat',ui-sans-serif,'Segoe UI',sans-serif;
+  --e3:12px; --e4:16px; --e5:24px; --e6:32px; --e7:48px;
+  --raio:16px; --raio-g:28px;
+  --sombra:0 12px 32px rgba(20,80,90,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--tinta);
+     font-family:var(--fonte);font-size:17px;line-height:1.55}
+.wrap{max-width:640px;margin:0 auto;padding:var(--e6) var(--e5) var(--e7)}
+h1{color:var(--teal);font-size:clamp(1.8rem,5vw,2.4rem);font-weight:800;
+   line-height:1.15;margin:0 0 var(--e4)}
+.lede{margin:0 0 var(--e6);max-width:52ch}
+.eyebrow{font-weight:700;font-size:.8125rem;letter-spacing:.14em;
+         text-transform:uppercase;color:var(--terracota);margin:0 0 var(--e3)}
+form{background:var(--branco);border-radius:var(--raio-g);box-shadow:var(--sombra);
+     padding:var(--e6)}
+label{display:block;font-weight:700;color:var(--teal);margin:var(--e5) 0 6px}
+label:first-of-type{margin-top:0}
+.dica{display:block;font-weight:500;font-size:.9rem;color:var(--tinta-fraca);margin-top:2px}
+input[type=text],textarea{
+  width:100%;padding:12px 14px;border:1.5px solid var(--linha);border-radius:var(--raio);
+  font-family:var(--fonte);font-size:16px;color:var(--tinta);background:var(--branco)}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:transparent}
+/* Nota como botão: no celular, digitar número é fricção e fricção derruba resposta. */
+/* A fileira ocupa a largura toda: as legendas das pontas usam space-between e,
+   com os botões amontoados à esquerda, o "5 · Superou" ficava sozinho lá na direita. */
+.notas{display:flex;justify-content:space-between;gap:8px;margin-top:8px;align-items:center}
+.notas label{margin:0;display:inline-flex}
+.notas input{position:absolute;opacity:0;width:0;height:0}
+.notas span{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:48px;
+  border:1.5px solid var(--linha);border-radius:999px;cursor:pointer;font-weight:700;font-size:1.05rem}
+.notas input:checked + span{background:var(--teal);border-color:var(--teal);color:var(--branco)}
+.notas input:focus-visible + span{outline:2px solid var(--terracota);outline-offset:2px}
+.pontas{display:flex;justify-content:space-between;gap:var(--e4);
+        margin-top:10px;font-size:.82rem;color:var(--tinta-fraca)}
+.pontas span{flex:0 1 auto;max-width:46%}
+.pontas span:last-child{text-align:right}
+.opcoes{margin-top:8px}
+.opcoes label{display:flex;gap:10px;align-items:flex-start;margin:0 0 10px;
+              font-weight:500;color:var(--tinta)}
+.opcoes input{margin-top:3px;width:20px;height:20px;flex:none;accent-color:var(--teal)}
+.caixa{background:rgba(212,91,61,.07);border-left:4px solid var(--terracota);
+       padding:var(--e4) var(--e5);border-radius:var(--raio);margin-top:var(--e6)}
+.caixa > label:first-of-type{margin-top:0}
+button{margin-top:var(--e6);width:100%;padding:16px;border:0;border-radius:999px;
+  background:var(--teal);color:var(--branco);font-family:var(--fonte);font-weight:700;
+  font-size:1.05rem;cursor:pointer}
+button:hover{background:var(--teal-escuro)}
+.escondido{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.lgpd{margin:var(--e5) 0 0;font-size:.8rem;line-height:1.5;color:var(--tinta-fraca)}
+.lgpd b{color:var(--tinta)}
+.lgpd a{color:var(--teal)}
+footer{margin-top:var(--e6);text-align:center;font-size:.85rem;color:var(--tinta-fraca)}
+footer a{color:var(--teal)}
+
+fieldset{border:0;margin:var(--e6) 0 0;padding:0}
+legend{font-weight:800;color:var(--terracota);font-size:.8125rem;letter-spacing:.12em;
+       text-transform:uppercase;margin-bottom:var(--e3)}
+.grade{width:100%;border-collapse:collapse;margin-top:8px;font-size:.92rem}
+.grade th{font-weight:600;color:var(--tinta-fraca);font-size:.78rem;text-align:center;padding:4px}
+.grade td{padding:8px 4px;border-top:1px solid var(--linha);text-align:center}
+.grade td:first-child{text-align:left;font-weight:500}
+.grade input{width:20px;height:20px;accent-color:var(--teal)}
+.outro{display:inline-block;width:auto;flex:1;margin-left:4px;padding:6px 10px}
+.notas.onze span{min-width:0;width:100%;height:40px;font-size:.95rem}
+.notas.onze{gap:4px}
+.notas.onze label{flex:1}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">Uns 5 minutos</p>
+  <h1>Como é a sua rotina de feira?</h1>
+  <p class="lede">
+    Oi! Somos as organizadoras do Destrava, o encontro que acontece durante a
+    Feirinha Ditacuja e continua por mais 30 dias com mentorias online pra quem
+    participa. Nas edições que fizemos, falamos sobre o retorno que um evento traz,
+    o posicionamento da marca e como fazer a feira pagar a conta.
+  </p>
+  <p class="lede">
+    Estamos pensando num programa mais completo. Antes de montar qualquer coisa,
+    queremos entender a rotina de quem vende em feira. Não tem resposta certa:
+    responde do jeito que é hoje.
+  </p>
+
+  <form method="POST" action="https://tb.unagi-ag.work/pesquisa-destrava">
+    <div class="escondido" aria-hidden="true">
+      <label for="empresa_site">Site da empresa</label>
+      <input type="text" id="empresa_site" name="empresa_site" tabindex="-1" autocomplete="off">
+    </div>
+    <input type="hidden" name="origem" value="expositor">
+
+    <fieldset><legend>Sobre você</legend>
+    <label>1. Há quanto tempo você vende em feira?</label>
+    <div class="opcoes"><label><input type="radio" name="tempo_feira" value="Menos de 1 ano" required><span>Menos de 1 ano</span></label><label><input type="radio" name="tempo_feira" value="De 1 a 3 anos"><span>De 1 a 3 anos</span></label><label><input type="radio" name="tempo_feira" value="De 3 a 10 anos"><span>De 3 a 10 anos</span></label><label><input type="radio" name="tempo_feira" value="Mais de 10 anos"><span>Mais de 10 anos</span></label></div>
+
+    <label for="vende">2. O que você vende?</label>
+    <input type="text" id="vende" name="vende" required>
+
+    <label>3. Como você toca o negócio hoje?</label>
+    <div class="opcoes"><label><input type="radio" name="equipe" value="Sozinha" required><span>Sozinha</span></label><label><input type="radio" name="equipe" value="Com ajuda da família"><span>Com ajuda da família</span></label><label><input type="radio" name="equipe" value="Com uma ou duas pessoas contratadas"><span>Com uma ou duas pessoas contratadas</span></label><label><input type="radio" name="equipe" value="Tenho equipe"><span>Tenho equipe</span></label><label><input type="radio" name="equipe" value="Outros"><span>Outros:</span><input type="text" class="outro" name="equipe_outro" aria-label="Qual?"></label></div>
+
+    <label>4. Com que frequência você participa de feiras ou eventos como expositora?</label>
+    <div class="opcoes"><label><input type="radio" name="frequencia" value="Toda semana" required><span>Toda semana</span></label><label><input type="radio" name="frequencia" value="Uma vez por mês"><span>Uma vez por mês</span></label><label><input type="radio" name="frequencia" value="Uma vez a cada três meses"><span>Uma vez a cada três meses</span></label><label><input type="radio" name="frequencia" value="De vez em quando, sem regularidade"><span>De vez em quando, sem regularidade</span></label><label><input type="radio" name="frequencia" value="Não participo de feiras, vendo por outros canais"><span>Não participo de feiras, vendo por outros canais</span></label></div>
+
+    <label>5. Além da feira, por onde você vende?</label>
+    <table class="grade"><thead><tr><th></th><th>uso muito</th><th>uso pouco</th><th>não uso</th></tr></thead>
+    <tbody><tr><td>Site próprio</td><td><input type="radio" name="canal_0" value="uso muito" aria-label="Site próprio: uso muito"></td><td><input type="radio" name="canal_0" value="uso pouco" aria-label="Site próprio: uso pouco"></td><td><input type="radio" name="canal_0" value="não uso" aria-label="Site próprio: não uso"></td></tr><tr><td>Marketplace (Shopee, Amazon, Mercado Livre, Elo7...)</td><td><input type="radio" name="canal_1" value="uso muito" aria-label="Marketplace (Shopee, Amazon, Mercado Livre, Elo7...): uso muito"></td><td><input type="radio" name="canal_1" value="uso pouco" aria-label="Marketplace (Shopee, Amazon, Mercado Livre, Elo7...): uso pouco"></td><td><input type="radio" name="canal_1" value="não uso" aria-label="Marketplace (Shopee, Amazon, Mercado Livre, Elo7...): não uso"></td></tr><tr><td>Instagram</td><td><input type="radio" name="canal_2" value="uso muito" aria-label="Instagram: uso muito"></td><td><input type="radio" name="canal_2" value="uso pouco" aria-label="Instagram: uso pouco"></td><td><input type="radio" name="canal_2" value="não uso" aria-label="Instagram: não uso"></td></tr><tr><td>WhatsApp</td><td><input type="radio" name="canal_3" value="uso muito" aria-label="WhatsApp: uso muito"></td><td><input type="radio" name="canal_3" value="uso pouco" aria-label="WhatsApp: uso pouco"></td><td><input type="radio" name="canal_3" value="não uso" aria-label="WhatsApp: não uso"></td></tr><tr><td>Loja física própria</td><td><input type="radio" name="canal_4" value="uso muito" aria-label="Loja física própria: uso muito"></td><td><input type="radio" name="canal_4" value="uso pouco" aria-label="Loja física própria: uso pouco"></td><td><input type="radio" name="canal_4" value="não uso" aria-label="Loja física própria: não uso"></td></tr><tr><td>Encomenda por indicação</td><td><input type="radio" name="canal_5" value="uso muito" aria-label="Encomenda por indicação: uso muito"></td><td><input type="radio" name="canal_5" value="uso pouco" aria-label="Encomenda por indicação: uso pouco"></td><td><input type="radio" name="canal_5" value="não uso" aria-label="Encomenda por indicação: não uso"></td></tr></tbody></table>
+
+    <label>6. Comparando com esses outros canais, hoje a feira é:</label>
+    <div class="opcoes"><label><input type="radio" name="peso_feira" value="O meu canal de venda mais importante" required><span>O meu canal de venda mais importante</span></label><label><input type="radio" name="peso_feira" value="Tão importante quanto os outros"><span>Tão importante quanto os outros</span></label><label><input type="radio" name="peso_feira" value="Menos importante que outro canal"><span>Menos importante que outro canal</span></label></div>
+    </fieldset>
+
+    <fieldset><legend>O que você já fez pra aprender</legend>
+    <label>7. Qual foi a última coisa que você fez pra aprender algo pro seu negócio?</label>
+    <div class="opcoes"><label><input type="radio" name="aprendeu" value="Curso presencial" required><span>Curso presencial</span></label><label><input type="radio" name="aprendeu" value="Curso ou live online"><span>Curso ou live online</span></label><label><input type="radio" name="aprendeu" value="Mentoria ou consultoria individual"><span>Mentoria ou consultoria individual</span></label><label><input type="radio" name="aprendeu" value="Workshop de um dia"><span>Workshop de um dia</span></label><label><input type="radio" name="aprendeu" value="Vídeo no YouTube ou conteúdo gratuito"><span>Vídeo no YouTube ou conteúdo gratuito</span></label><label><input type="radio" name="aprendeu" value="Não fiz nada nos últimos dois anos"><span>Não fiz nada nos últimos dois anos</span></label></div>
+
+    <label for="tema_curso">8. Qual era o tema?
+      <span class="dica">Pule se você não fez nada nos últimos dois anos.</span></label>
+    <input type="text" id="tema_curso" name="tema_curso">
+
+    <label>9. Quanto você investiu nisso?</label>
+    <div class="opcoes"><label><input type="radio" name="investiu" value="Foi gratuito"><span>Foi gratuito</span></label><label><input type="radio" name="investiu" value="Até R$ 100"><span>Até R$ 100</span></label><label><input type="radio" name="investiu" value="De R$ 101 a R$ 300"><span>De R$ 101 a R$ 300</span></label><label><input type="radio" name="investiu" value="De R$ 301 a R$ 600"><span>De R$ 301 a R$ 600</span></label><label><input type="radio" name="investiu" value="De R$ 601 a R$ 1.200"><span>De R$ 601 a R$ 1.200</span></label><label><input type="radio" name="investiu" value="De R$ 1.201 a R$ 3.000"><span>De R$ 1.201 a R$ 3.000</span></label><label><input type="radio" name="investiu" value="Mais de R$ 3.000"><span>Mais de R$ 3.000</span></label></div>
+
+    <label>10. Quanto tempo durou?</label>
+    <div class="opcoes"><label><input type="radio" name="duracao" value="Algumas horas"><span>Algumas horas</span></label><label><input type="radio" name="duracao" value="Um dia"><span>Um dia</span></label><label><input type="radio" name="duracao" value="Alguns encontros ao longo de semanas"><span>Alguns encontros ao longo de semanas</span></label><label><input type="radio" name="duracao" value="Um acompanhamento de meses"><span>Um acompanhamento de meses</span></label><label><input type="radio" name="duracao" value="Era gravado, fiz no meu ritmo"><span>Era gravado, fiz no meu ritmo</span></label></div>
+
+    <label>11. De 0 a 10, o quanto valeu o que você investiu ali?</label>
+    <div class="notas onze"><label><input type="radio" name="valeu" value="0"><span>0</span></label><label><input type="radio" name="valeu" value="1"><span>1</span></label><label><input type="radio" name="valeu" value="2"><span>2</span></label><label><input type="radio" name="valeu" value="3"><span>3</span></label><label><input type="radio" name="valeu" value="4"><span>4</span></label><label><input type="radio" name="valeu" value="5"><span>5</span></label><label><input type="radio" name="valeu" value="6"><span>6</span></label><label><input type="radio" name="valeu" value="7"><span>7</span></label><label><input type="radio" name="valeu" value="8"><span>8</span></label><label><input type="radio" name="valeu" value="9"><span>9</span></label><label><input type="radio" name="valeu" value="10"><span>10</span></label></div>
+    <div class="pontas"><span>0 · Não valeu nada</span><span>10 · Valeu muito</span></div>
+
+    <label for="bom">12. O que foi bom?</label>
+    <textarea id="bom" name="bom"></textarea>
+    <label for="faltou">13. O que faltou?</label>
+    <textarea id="faltou" name="faltou"></textarea>
+    </fieldset>
+
+    <fieldset><legend>O que acontece de verdade</legend>
+    <label>14. Nos últimos seis meses, quais destas situações aconteceram com você?
+      <span class="dica">Marque todas que aconteceram.</span></label>
+    <div class="opcoes"><label><input type="checkbox" name="situacoes" value="Levei produto demais ou de menos e errei a quantidade"><span>Levei produto demais ou de menos e errei a quantidade</span></label><label><input type="checkbox" name="situacoes" value="Não soube responder na hora quanto custava, ou dei um desconto e depois achei que tinha perdido"><span>Não soube responder na hora quanto custava, ou dei um desconto e depois achei que tinha perdido</span></label><label><input type="checkbox" name="situacoes" value="Vendi bem num dia e quase nada no outro, sem entender por quê"><span>Vendi bem num dia e quase nada no outro, sem entender por quê</span></label><label><input type="checkbox" name="situacoes" value="Terminei a feira sem saber se deu lucro depois de somar custo, deslocamento e tempo"><span>Terminei a feira sem saber se deu lucro depois de somar custo, deslocamento e tempo</span></label><label><input type="checkbox" name="situacoes" value="Cliente elogiou muito e foi embora sem comprar"><span>Cliente elogiou muito e foi embora sem comprar</span></label><label><input type="checkbox" name="situacoes" value="Não consegui mais falar com quem comprou de mim uma vez"><span>Não consegui mais falar com quem comprou de mim uma vez</span></label><label><input type="checkbox" name="situacoes" value="Postei e não deu retorno nenhum"><span>Postei e não deu retorno nenhum</span></label><label><input type="checkbox" name="situacoes" value="Fiquei sem tempo de produzir porque estava cuidando da venda"><span>Fiquei sem tempo de produzir porque estava cuidando da venda</span></label><label><input type="checkbox" name="situacoes" value="Perdi venda por falta de maquininha, troco, embalagem ou sacola"><span>Perdi venda por falta de maquininha, troco, embalagem ou sacola</span></label><label><input type="checkbox" name="situacoes" value="Não sei dizer quanto do meu preço é lucro"><span>Não sei dizer quanto do meu preço é lucro</span></label><label><input type="checkbox" name="situacoes" value="Nenhuma dessas"><span>Nenhuma dessas</span></label></div>
+
+    <label>15. Dessas que você marcou, qual foi a que mais te custou dinheiro?
+      <span class="dica">Escolha uma só.</span></label>
+    <div class="opcoes"><label><input type="radio" name="mais_custou" value="Levei produto demais ou de menos e errei a quantidade"><span>Levei produto demais ou de menos e errei a quantidade</span></label><label><input type="radio" name="mais_custou" value="Não soube responder na hora quanto custava, ou dei um desconto e depois achei que tinha perdido"><span>Não soube responder na hora quanto custava, ou dei um desconto e depois achei que tinha perdido</span></label><label><input type="radio" name="mais_custou" value="Vendi bem num dia e quase nada no outro, sem entender por quê"><span>Vendi bem num dia e quase nada no outro, sem entender por quê</span></label><label><input type="radio" name="mais_custou" value="Terminei a feira sem saber se deu lucro depois de somar custo, deslocamento e tempo"><span>Terminei a feira sem saber se deu lucro depois de somar custo, deslocamento e tempo</span></label><label><input type="radio" name="mais_custou" value="Cliente elogiou muito e foi embora sem comprar"><span>Cliente elogiou muito e foi embora sem comprar</span></label><label><input type="radio" name="mais_custou" value="Não consegui mais falar com quem comprou de mim uma vez"><span>Não consegui mais falar com quem comprou de mim uma vez</span></label><label><input type="radio" name="mais_custou" value="Postei e não deu retorno nenhum"><span>Postei e não deu retorno nenhum</span></label><label><input type="radio" name="mais_custou" value="Fiquei sem tempo de produzir porque estava cuidando da venda"><span>Fiquei sem tempo de produzir porque estava cuidando da venda</span></label><label><input type="radio" name="mais_custou" value="Perdi venda por falta de maquininha, troco, embalagem ou sacola"><span>Perdi venda por falta de maquininha, troco, embalagem ou sacola</span></label><label><input type="radio" name="mais_custou" value="Não sei dizer quanto do meu preço é lucro"><span>Não sei dizer quanto do meu preço é lucro</span></label><label><input type="radio" name="mais_custou" value="Nenhuma dessas"><span>Nenhuma dessas</span></label></div>
+    </fieldset>
+
+    <fieldset><legend>Dia e preço</legend>
+    <label>16. Se existisse um encontro pra resolver isso, que dia funcionaria pra você?
+      <span class="dica">Marque todos que funcionam. Responde com sinceridade, é justamente isso que a gente precisa descobrir.</span></label>
+    <div class="opcoes"><label><input type="checkbox" name="dias" value="Segunda a quinta, durante o dia"><span>Segunda a quinta, durante o dia</span></label><label><input type="checkbox" name="dias" value="Segunda a quinta, à noite"><span>Segunda a quinta, à noite</span></label><label><input type="checkbox" name="dias" value="Sexta"><span>Sexta</span></label><label><input type="checkbox" name="dias" value="Sábado"><span>Sábado</span></label><label><input type="checkbox" name="dias" value="Domingo"><span>Domingo</span></label><label><input type="checkbox" name="dias" value="Nenhum dia funciona hoje"><span>Nenhum dia funciona hoje</span></label></div>
+
+    <p class="lede" style="margin:var(--e5) 0 0">Agora imagine um encontro de um dia, presencial, feito sob medida pra resolver aquilo que você marcou.</p>
+
+    <label>17. A partir de que valor você acharia caro a ponto de nem considerar?</label>
+    <div class="opcoes"><label><input type="radio" name="caro" value="Acima de R$ 50"><span>Acima de R$ 50</span></label><label><input type="radio" name="caro" value="Acima de R$ 100"><span>Acima de R$ 100</span></label><label><input type="radio" name="caro" value="Acima de R$ 200"><span>Acima de R$ 200</span></label><label><input type="radio" name="caro" value="Acima de R$ 350"><span>Acima de R$ 350</span></label><label><input type="radio" name="caro" value="Acima de R$ 500"><span>Acima de R$ 500</span></label><label><input type="radio" name="caro" value="Acima de R$ 800"><span>Acima de R$ 800</span></label><label><input type="radio" name="caro" value="Acima de R$ 1.200"><span>Acima de R$ 1.200</span></label><label><input type="radio" name="caro" value="Acima disso eu ainda consideraria"><span>Acima disso eu ainda consideraria</span></label></div>
+
+    <label>18. E abaixo de que valor você desconfiaria que não vale a pena?</label>
+    <div class="opcoes"><label><input type="radio" name="barato" value="Abaixo de R$ 30"><span>Abaixo de R$ 30</span></label><label><input type="radio" name="barato" value="Abaixo de R$ 50"><span>Abaixo de R$ 50</span></label><label><input type="radio" name="barato" value="Abaixo de R$ 100"><span>Abaixo de R$ 100</span></label><label><input type="radio" name="barato" value="Abaixo de R$ 200"><span>Abaixo de R$ 200</span></label><label><input type="radio" name="barato" value="Abaixo de R$ 350"><span>Abaixo de R$ 350</span></label><label><input type="radio" name="barato" value="Não desconfiaria de preço baixo"><span>Não desconfiaria de preço baixo</span></label></div>
+    </fieldset>
+
+    <div class="caixa">
+      <label>19. A gente quer fazer isso direito, e pra isso precisa ouvir algumas pessoas com calma. Você toparia uma conversa online de 30 minutos pra contar como é o seu dia de feira?</label>
+      <div class="opcoes"><label><input type="radio" name="conversa" value="Sim, topo"><span>Sim, topo</span></label><label><input type="radio" name="conversa" value="Agora não"><span>Agora não</span></label></div>
+      <label for="nome">Seu nome <span class="dica">Só se você topou a conversa.</span></label>
+      <input type="text" id="nome" name="nome" autocomplete="name">
+      <label for="whatsapp">Seu WhatsApp <span class="dica">Só se você topou a conversa.</span></label>
+      <input type="text" id="whatsapp" name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000">
+    </div>
+
+    <button type="submit">Enviar</button>
+<script>
+(function () {
+  var f = document.currentScript.closest('form');
+  if (!f) return;
+  var enviado = false;
+  f.addEventListener('submit', function (ev) {
+    if (enviado) { ev.preventDefault(); return; }
+    enviado = true;
+    var b = f.querySelector('button[type=submit]');
+    if (b) b.textContent = 'Enviando...';
+    setTimeout(function () { if (b) b.disabled = true; }, 0);
+  });
+})();
+</script>
+
+    <p class="lgpd">
+      <b>Sobre os seus dados.</b> Quem coleta estas respostas são as organizadoras
+      do Destrava (Sarah Hirota, Ana Daly, Veridiana Lutti e Sandra Chicaler), e o
+      objetivo é desenhar um programa pra quem vende em feira. As respostas ficam
+      guardadas no servidor da Sarah e numa planilha que só a equipe organizadora
+      consulta. Nome e WhatsApp só são usados pra marcar a conversa, e só se você
+      topou. Você pode pedir pra ver, corrigir ou apagar o que enviou escrevendo
+      para <a href="mailto:unagi.sarah@gmail.com">unagi.sarah@gmail.com</a>. Ao
+      enviar, você concorda com isso.
+    </p>
+  </form>
+
+  <footer><a href="/">sarahhirota.com</a></footer>
+</main>
+</body>
+</html>
