@@ -14,16 +14,17 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:run-like-a-mother-2026-09-26@sarahhirota.com
-DTSTAMP:20260826T200000Z
-DTSTART;TZID=America/Sao_Paulo:20260926T063000
+SEQUENCE:1
+DTSTAMP:20260914T192000Z
+DTSTART;TZID=America/Sao_Paulo:20260926T070000
 DTEND;TZID=America/Sao_Paulo:20260926T100000
 SUMMARY:Run Like a Mother - corrida da B2Mamy
-LOCATION:Sao Paulo - local a confirmar
-DESCRIPTION:4 km de corrida ou caminhada em Sao Paulo, local a confirmar, com cafe e n
- etworking depois da chegada.\n\n6h30 credenciamento e retirada do kit\n7h30 
- largada\n8h30 chegada e foto oficial\n8h30 as 10h cafe e networking\n\nO pon
- to de encontro exato sera combinado no grupo do WhatsApp.\n\nMais informacoe
- s: https://sarahhirota.com/corrida
+LOCATION:Parque da Sabesp Sumare - Sao Paulo
+DESCRIPTION:4 km de corrida ou caminhada no Parque da Sabesp Sumare\, em Sa
+ o Paulo\, das 7h as 10h\, com cafe e networking depois da chegada.\n\nA B2
+ Mamy vai divulgar o horario de cada momento nos proximos dias.\n\nO ponto 
+ de encontro exato sera combinado no grupo do WhatsApp.\n\nMais informacoes
+ : https://sarahhirota.com/corrida
 URL:https://sarahhirota.com/corrida
 BEGIN:VALARM
 TRIGGER:-P1D
